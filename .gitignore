@@ -1,5 +1,4 @@
 .env
-.env.template
 node_modules
 db-data/
 wordpress/wp-content/uploads
