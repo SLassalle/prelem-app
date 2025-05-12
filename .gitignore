@@ -1,4 +1,12 @@
 .env
-node_modules
-db-data/
-wordpress/wp-content/uploads
+.env.*
+!.env.template
+
+dev/frontend/node_modules/
+dev/frontend/dist/
+
+dev/frontend/.dockerignore
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

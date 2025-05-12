@@ -1,5 +1,5 @@
 # Dockerfile pour Vue.js avec Vite
-FROM node:24
+FROM node:20
 
 WORKDIR /app
 

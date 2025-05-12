@@ -5,7 +5,8 @@ services:
       - "5173:5173"
     volumes:
       - ./frontend:/app
-    command: npm run dev
+      - /app/node_modules      
+    command: npm run dev -- --host
     depends_on:
       - wordpress
 
@@ -15,7 +16,7 @@ services:
     ports:
       - "8080:80"
     environment:
-      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
       WORDPRESS_DB_USER: ${MYSQL_USER}
       WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
@@ -36,7 +37,7 @@ services:
       - db-data:/var/lib/mysql
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin:5.2
     restart: always
     ports:
       - "8081:80"
